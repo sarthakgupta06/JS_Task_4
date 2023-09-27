@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+</head>
+<body>
+    <h1>Date and Time Display</h1>
+    <button id="showDateButton">Show Date</button>
+    <button id="showTimeButton">Show Time</button>
+    <p id="result"></p>
+
+    <script>
+        // Get the result element
+        let resultElement = document.getElementById("result");
+
+        // Get the "Show Date" button
+        let showDateButton = document.getElementById("showDateButton");
+        
+        // Add click event listener for "Show Date" button
+        showDateButton.addEventListener("click", function() {
+            // Get the current date
+            let currentDate = new Date();
+            
+            // Format the date as "d/M/yyyy"
+            let formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
+            
+            // Display the formatted date
+            resultElement.textContent = formattedDate;
+        });
+
+        // Get the "Show Time" button
+        let showTimeButton = document.getElementById("showTimeButton");
+        
+        // Add click event listener for "Show Time" button
+        showTimeButton.addEventListener("click", function() {
+            // Get the current date and time
+            let currentDateTime = new Date();
+            
+            // Format the date and time as per your requirement
+            let formattedDateTime = currentDateTime.toString(); // This will give the desired format
+            
+            // Display the formatted date and time
+            resultElement.textContent = formattedDateTime;
+        });
+    </script>
+</body>
+</html>
